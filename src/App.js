@@ -9,29 +9,18 @@ class App extends Component {
   state = {
     usersData:[],
     value:'',
-    searchData:[],
     isLoading:true,
     error:null
   }
 
   handleInputChange = (e) => {
     const search = e.target.value.toLowerCase();
-    let searchData = [...this.state.usersData];
-    if(search){
-      searchData = searchData.filter(item => item.name.toLowerCase().indexOf(search) !== -1);
-      console.log(searchData);
+
       this.setState({
-        value:search,
-        searchData:searchData
-      })
-    } else {
-      console.log('e');
-      this.setState({
-        value:search,
-        searchData:this.state.usersData
+        value:search
       })
     }
-  }
+  
 
   fetchData = (APIpatch) => {
     fetch(baseUrl + APIpatch)
@@ -54,12 +43,14 @@ class App extends Component {
 
   render() {
     const {value} = this.state;
+    const func = this.state.usersData.filter(el => el.name.toLowerCase().indexOf(value) !== -1).map(el => <li>{el.name}</li>)
+    console.log(func);
     return (
       <div>
       <SearchBar value={value} searchFn={this.handleInputChange}/>
       <List/>
       <ul>
-      {this.state.searchData.map(el => <li>{el.name}</li>)}
+      {func.length ? func : 'brak wynikow'}
       </ul>
       </div>
     )
