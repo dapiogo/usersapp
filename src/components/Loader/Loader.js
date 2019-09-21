@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './Loader.module.scss';
-import { loadingData } from '../../assets/translation/translation';
+import { translation } from '../../assets/translation/translation';
 
 const Loader = () => (
     <div className={styles.wrapper}>
-        <div className={styles.loading}></div>
-        <p>{loadingData}</p>
+        <div className={styles.wrapper__loading}></div>
+        <p>{translation.loadingData}</p>
     </div>
 );
 

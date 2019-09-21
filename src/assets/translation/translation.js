@@ -1,3 +1,6 @@
-export const noSearchResults = `No result!`;
-export const usersListTile = `Users List`;
-export const loadingData =`Loading data...`;
+export const translation = {
+    'noSearchResults':`No result!`,
+    'usersListTile':`Users List`,
+    'loadingData':`Loading data...`,
+    'placeholder':`Search by user name..`
+};

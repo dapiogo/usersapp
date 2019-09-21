@@ -1,5 +1,5 @@
 .wrapper {
-    input {
+    &__input {
         background: #fff url('../../assets/img/search.svg') 98% no-repeat;
         width: 100%;
         border: 0;
@@ -9,6 +9,6 @@
         outline: none;
         margin: 10px 0;
         border-radius: 5px;
-        border-bottom: 2px solid black;
+        border-bottom: 2px solid #000;
     } 
 }
